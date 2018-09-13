@@ -1,0 +1,100 @@
+Eclipse shortcut
+1.Ctrl+D-------delete the current line.
+
+2.Alt+up/down ----to move the code up and down.
+
+3.Alt+Left/right-----Navigate from one class to another class on IDE.
+
+4.Ctrl+K  and Ctrl + Shift +K-----To highlight the all occurence of variable name in file.
+
+5.Ctrl+1---To override unimplemented method.The best thing you can do if you see an error is to use the quick fix.
+
+6.Ctrl+M minimize and maximize the file on editor
+
+7.Ctrl+2---
+
+8.Ctrl+shift+t-----To find out pRTICULr class in project of workspace even from jar file.
+
+9.Ctrl+E-------To show all opend editor
+
+10.Ctrl+f6-----To show the list of opened editor
+
+11.Ctrl+F7-----to move between Views.
+
+12.Ctrl+F8----To move between perspective
+
+13.Ctrl+F11----Runs the application. What gets launched depends on your settings. It will either launch the last launched class (my preferred way) or it will launch the currently selected resource (the default way). If you want to change its behavior read the previous post.
+                from Dzon(https://dzone.com/articles/effective-eclipse-shortcut-key)
+
+14.Ctrl+N----To open new wizard.class,jsp,xml etc
+
+15.Ctrl+i---Corrects indentation
+
+16.CTRL + SHIFT + F
+
+Formats code. You can make beautiful looking code out of a mess with this. It requires a bit of setup, but it is well worth it. You can find its settings under Window->Preferences->Java->Code style->Formatter
+
+17.CTRL+SHIFT+L----to show list of shortcut key.
+
+Note-:
+I don't like your shortcuts
+Such is life nowadays. Remember, you can always change those bindings to match your preferences. Open Windows->Preferences->General->Keys. Now you can use the filter to find your shortcut and change its binding
+
+CTRL+SHIFT+G----Bind this to "Generate getters and setters". This is a "must have.
+
+18.ALT+C---Bind this to SVN/CVS "Commit".
+
+ALT+U------Bind this to SVN/CVS "Update".
+
+19.Ctrl+shift+R------to find out the resources file.
+
+20.Ctrl + o for quick outline going quickly to method
+
+21.Ctrl + Shift + Up and down for navigating from member to member (variables and methods
+Shift+ALT+Up
+
+Read more: http://javarevisited.blogspot.com/2010/10/eclipse-tutorial-most-useful-eclipse.html#ixzz4mjPPiLnv
+
+22.F3---To see the definition of function.
+
+Eclipse Shortcut for Editing Code
+
+These Eclipse shortcuts are very helpful for editing code in Eclipse.
+5) Ctrl + / for commenting, uncommenting lines and blocks, see here for live example.
+6) Ctrl + Shift + / for commenting, uncommenting lines with block comment, see here for example.
+8) Selecting class and pressing F4 to see its Type hierarchy
+10) Ctrl + F4 or Ctrl + w for closing current file
+11) Ctrl+Shirt+W for closing all files.
+14) Ctrl + l go to line
+16) Select text and press Ctrl + Shift + F for formatting.
+17) Ctrl + F for find, find/replace
+18) Ctrl + D to delete a line
+19) Ctrl + Q for going to last edited place
+
+
+Read more: http://javarevisited.blogspot.com/2010/10/eclipse-tutorial-most-useful-eclipse.html#ixzz4mjQglEnQ
+
+23.Ctrl+shift+G----to find the occurence of method in project
+
+24.Ctrl+alt+G----to find out the occurrence of variable through out the application.
+
+25.Alt+Shift+X, Q to run Ant build file using keyboard shortcuts in Eclipse.
+
+Read more: http://javarevisited.blogspot.com/2010/10/eclipse-tutorial-most-useful-eclipse.html#ixzz4mjRZBYLK
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Context menu in eclipse IDE
+
+Context key always starts with Shift+Alt+s,
+
+1.Shift+Alt+s,c---default constructor
+
+2.Shift+Alt+s,o--Constructor using field.
+
+3.Shift+Alt+s,R-----getter and setter
+
+4.Shift+Alt+s,v-----Implement unimplemented method.
+
+
+5.

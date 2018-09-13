@@ -1,0 +1,3 @@
+http://javapapers.com/spring/spring-properties-with-propertysource-annotation/
+
+different ways to use properties files in springFramework

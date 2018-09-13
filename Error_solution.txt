@@ -1,0 +1,181 @@
+﻿1.com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+ans--Package name which has annotation in classs path has missed
+
+2.com.sun.jersey.spi.servlet.container.ServletContainer class does not find
+ans---jersy-server jar file is missed.
+
+3.SEVERE: Servlet.service() for servlet [rest] in context with path [/RestExample3] threw exception [Servlet execution threw an exception] with root cause
+java.lang.AbstractMethodError: javax.ws.rs.core.UriBuilder.uri(Ljava/lang/String;)Ljavax/ws/rs/core/UriBuilder;
+
+ans--
+You're using both Jersey 1 & 2 and that's not possible - so the classloader is picking up the wrong URIBuilder class.
+
+The Jersey dependencies in group com.sun.jersey are all Jersey version 1.  Jersey version 2 uses the group org.glassfish.jersey.
+
+You have both in your Maven dependencies which is causing this problem.
+
+If possible only use Jersey 2.
+
+4.(XML) The markup in the document following the root element must be well-formed. Start location: 6:2
+
+ans-we are missing a root.either root did not close or we are missing a root tag.all other tag must be defibe in a root tag.
+
+5.org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 67; SchemaLocation: schemaLocation value = 'http://www.springframework.org/schema/batch  http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-3.2.xsd' must have even number of URI's.
+Exception in thread "main" org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 8 in XML document from URL [file:resources/spring/batch/job/job-report.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 67; cvc-elt.1: Cannot find the declaration of element 'beans'.
+Caused by: org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 67; cvc-elt.1: Cannot find the declaration of element 'beans'.
+
+ans-in xml file some URi missing at top of file with some other url check and add url for used tag in xml file.
+
+6.org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+Caused by: java.lang.IllegalStateException: Input resource must exist (reader is in 'strict' mode)
+
+ans:--because of path is not given correctly.
+in this case may be url is not given for file to read data or path is given but not correct.
+further more check the folder where file is present.if folder is type of resource then file path will be start with classpath else file in case of folder is simple folder without resource folder.
+
+7.Exception in thread "main" org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'step1': Cannot resolve reference to bean 'xmlItemReader' while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlItemReader' defined in class path resource [spring/batch/jobs/job-report.xml]: Cannot resolve reference to bean 'reportUnmarshaller' while setting bean property 'unmarshaller'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportUnmarshaller' defined in class path resource [spring/batch/jobs/job-report.xml]: Invocation of init method failed; nested exception is org.springframework.oxm.UncategorizedMappingException: Unknown JAXB exception; nested exception is com.sun.xml.internal.bind.v2.runtime.IllegalAnnotationsException: 1 counts of IllegalAnnotationExceptions
+
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlItemReader' defined in class path resource [spring/batch/jobs/job-report.xml]: Cannot resolve reference to bean 'reportUnmarshaller' while setting bean property 'unmarshaller'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportUnmarshaller' defined in class path resource [spring/batch/jobs/job-report.xml]: Invocation of init method failed; nested exception is org.springframework.oxm.UncategorizedMappingException: Unknown JAXB exception; nested exception is com.sun.xml.internal.bind.v2.runtime.IllegalAnnotationsException: 1 counts of IllegalAnnotationExceptions
+Adapter com.hcl.adaptor.JaxbDateAdaptor is not applicable to the field type java.util.Date.
+
+ans:-here Date class of Javaxsql has imported but had to import java.util package after changing the problem has been resolved.
+
+8.org.springframework.beans.NotReadablePropertyException: Invalid property 'csvDob' of bean class [com.hcl.model.report.Report]: Bean property 'csvDob' is not readable or has an invalid getter method: Does the return type of the getter match the parameter type of the setter?
+
+ans---in report domain class name of getter method was different than mentioned in report-job.xml file.
+
+9.ERROR:      Unable to bootstrap UIDAI Server's Service Container.
+REASON:     Either servlet init parameter BOOTSTRAP_ENVIRONMENT_VARIABLE is not defined,
+            or the environment variable whose name is specified as value of BOOTSTRAP_ENVIRONMENT_VARIABLE is
+            not defined in system environment.
+			org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'platformPropertyPlaceholderConfigurer' defined in class path resource [packaged/uidserver/token-replacer.xml]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException
+
+			
+solution:-it case because of your path is not given correct or may we are using java 1.8 so we need to change to java 1.7 to resolve this problem
+
+10.Fatal error in bootstrap sequence. Cannot continue!
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'platformPropertyPlaceholderConfigurer' defined in class path resource [packaged/uidserver/token-replacer.xml]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException
+	
+ans:-
+
+11.Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+
+ans:-java 1.8 version does not support this facilities so you need to install java 1.7 or if it is already installed then change the library in project config path and from project facet.
+
+12.com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+
+solution:-
+
+13.Could not publish server configuration for Tomcat v6.0 Server at localhost.
+Multiple contexts have a path of "/FirstApache"
+
+ans:-
+Search for the server.xml file and check your <Context> tags, probably there are multiple definitions for the same path. Remove the duplicates and it should work for you.
+
+14.“Server Tomcat v7.0 Server at localhost failed to start” without stack trace while it works in terminal
+solution:-
+To resolve this issue, you have to delete the .snap file located in the directory :
+
+<workspace-directory>\.metadata\.plugins\org.eclipse.core.resources.
+
+15.org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from URL location [classpath:external/UIDEnrlCommonServiceContext.xml]
+Offending resource: URL [file:E:/Project/CSAPI/build/config/enrlsearch/resources/external/UIDSearchServerAppContext.xml]; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [external/UIDEnrlCommonServiceContext.xml]; nested exception is java.io.FileNotFoundException: class path resource [external/UIDEnrlCommonServiceContext.xml] cannot be opened because it does not exist
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [external/UIDEnrlCommonServiceContext.xml]; nested exception is java.io.FileNotFoundException: class path resource [external/UIDEnrlCommonServiceContext.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:229).
+
+	... 43 more
+Caused by: java.io.FileNotFoundException: class path resource [external/UIDEnrlCommonServiceContext.xml] cannot be opened because it does not exist.
+
+ans:-
+
+16.org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from URL location [classpath:external/configcontext.xml]
+Offending resource: URL [file:E:/Project/autoassignmentBt/build/config/uidbatch_mddautoassign/resources/external/UIDEnrlBatchContext.xml]; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from class path resource [external/configcontext.xml]; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'UID_ENRL_COMMON_CONFIG_CONTEXT' in string value "${UID_ENRL_COMMON_CONFIG_CONTEXT}"
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	
+	Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'UID_ENRL_COMMON_CONFIG_CONTEXT' in string value "${UID_ENRL_COMMON_CONFIG_CONTEXT}
+	
+solution:-
+
+17.Errors occurred during the build.
+Errors running builder 'Maven Project Builder' on project 'Mddautoassign'.
+Could not calculate build plan: Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+Could not calculate build plan: Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+
+or
+
+Could not calculate build plan: Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+Plugin org.apache.maven.plugins:maven-resources-plugin:2.6 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+
+
+or 
+
+When maven says “resolution will not be reattempted until the update interval of MyRepo has elapsed”, where is that interval specified?
+solution:-
+
+delete the build folder and m2_repo and build the project  and import the project again.
+
+18.org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'jobAdministratorExporter' defined in class path resource [packaged/uidbatchcommon/common-batch-config.xml]: Could not resolve parent bean definition 'mbeansExporter'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mbeansExporter' is defined
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedBeanDefinition(AbstractBeanFactory.java:1238)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedBeanDefinition(AbstractBeanFactory.java:1182)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1168)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:733)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:94)
+	at in.gov.uidai.server.impl.bootstrapext.spring.ApplicationContextFactory$1.<init>(ApplicationContextFactory.java:164)
+	at in.gov.uidai.server.impl.bootstrapext.spring.ApplicationContextFactory.init(ApplicationContextFactory.java:164)
+	at in.gov.uidai.server.impl.container.ContainerImpl$BootstrapExtensionDependencyManager.loadBootstrapExtension(ContainerImpl.java:353)
+	at in.gov.uidai.server.impl.container.ContainerImpl$BootstrapExtensionDependencyManager.checkAndloadBootstrapExtension(ContainerImpl.java:308)
+	at in.gov.uidai.server.impl.container.ContainerImpl$BootstrapExtensionDependencyManager.loadBootstrapExtensions(ContainerImpl.java:283)
+	at in.gov.uidai.server.impl.container.ContainerImpl.initializeBootstrapExtensions(ContainerImpl.java:168)
+	at in.gov.uidai.server.impl.container.ContainerImpl.init(ContainerImpl.java:101)
+	at in.gov.uidai.server.bootstrap.Bootstrap.start(Bootstrap.java:232)
+	at in.gov.uidai.server.bootstrap.Bootstrap.init(Bootstrap.java:110)
+	at in.gov.uidai.server.client.BootstrapClient.main(BootstrapClient.java:56)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mbeansExporter' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1168)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedBeanDefinition(AbstractBeanFactory.java:946)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedBeanDefinition(AbstractBeanFactory.java:1223)
+	... 17 more
+	
+solution:-
+
+19.)connection refused at maven
+and:-give the proxy of uidai in setting.xml file of maven.
+
+20.)if maven repository failed to download the dependency then create a user folder from eclispe and add all jar files from lib folder of project.
+
+21.)FATAL ERROR in native method: JDWP No transports initialized, jvmtiError=AGENT_ERROR_TRANSPORT_INIT(197)
+
+________________________________________________________________________________________________________________________________________________________
+E:\Project\uidclientintegrationserver\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\uidclientintegrationserver\WEB-INF\lib
+
+
+E:\Project\uidclientintegrationserver\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\uidclientintegrationserver\WEB-INF\lib
+
+
+22.)Could not set the project description for 'uidclientintegrationserver' because the project description file (.project) is out of sync with the file system.
+
+solution:-
+Build whole workspace again and again
+Right Click on project->Refresh
+Run mvn -U eclipse:eclipse
+Refresh whole workplace
+
+____________________________
+if some token is missing at run time then we can configure it in the environment or vmArgument of eclipse
+
+if you are adding it in VMargumnet then start with -D<token name>=<value>
+e.g -DUIDAI.SYSTEM.ID=1
+
+in case of in environment give the key and value.
+
+

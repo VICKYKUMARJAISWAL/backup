@@ -1,0 +1,28 @@
+#some note about how to load a classpath for the simple java project and Maven project,Dynamic project.
+
+1.If project is type of Maven or Dynamic and resources file is under of Folder which is made as resource then in this case we use url to load a path like given below
+classpath:xml/csvreport.csv
+
+in this case structre of file would be as
+
+src/main/resources/xml/csvreport.csv
+
+2.If project has folder which contains file in the level of src in this case we use following url
+
+file:csv/cvsreport.csv
+and structre would be 
+
+csv/cvsreport.csv
+
+
+Remarks:if folder is resource folder then we should use classpath and file in case of folder is not resource folder and it is in the level of src. 
+
+
+#For simple project
+
+1.If folder is resource then we should use system.getProperties("user.dir")+"add the path of file
+
+e.g---system.getProperties("user.dir")+"/resource/file/file.properties
+
+2.if folder is not resource then in this case we use 
+directly like ./resource/file/file.properties

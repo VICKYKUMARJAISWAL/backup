@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/42077690/what-is-that-application-class-lifecycle-of-a-rest-service

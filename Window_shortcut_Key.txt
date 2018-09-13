@@ -1,0 +1,8 @@
+Shortcut window run command
+
+1.mstsc---to open remote desktop window
+2.ncpa.cpl--to open wifi setting
+3.services.msc--to open setting of service like opne setting for the Oracle to run stop or restart.
+4.msconfig---to open system configuration
+5.
+

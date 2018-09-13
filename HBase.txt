@@ -1,0 +1,113 @@
+
+HBase Database is NonSQL or Non relational database also called Column oriented database that store the data key value pair in column families.
+In Hbase,Tables are divided in region and served by the region server.and region  is divided vertically in column family into region. HBase is suitable of OLAP database.
+ 
+
+In HBASE,
+Table is collection of Rows
+rows is collection of column families.
+column families is a collection of column.
+column is collection of key value pair.
+
+
+Hbase have three component
+Client library
+Master server
+region server
+
+work of master server
+
+1.)It assign the region to region server.it will take the help of Zookeeper of Apach for this task.
+2.)It handle the load balancing of region of region server.it unload the busy servers and shift the region with less occupied server.
+3.)Maintain the state of cluster by negotiating the load balancing.
+4.)it is responsible for shcema change and other metadata operation like creation of table and column families.
+
+Region
+Region is nothing but table which will be spilitted and spread across the region server.
+
+Region server which do the following task.
+
+1.)it provides the communication between client and region for the data manipulation.
+2.)it handle the read write request for the all region under it.
+3.)desicde the region size by region size threasold.
+
+
+Region server contains region and Stores.
+store contains Memory store and HFile.MemStore is like Cache memory .in initially anything will be stored in MemStore and later stage data will be transferred and saved from memstore to Hfile as block and memstore will be flased.
+
+Zookeeper
+
+Zookeeper is an open source project that provides the service like maintaining configuration,naming,distributed syncronization.
+
+Zookeper contains ephemeral node representing the different region server.this  node is used by the Master server to find out the available server.
+Master server also can take help of this node to find out the server failure or network partition.
+
+Clients can communicate with region server with the help of Zookeeper.
+HBase itself can  take care of Zookeeper.
+
+
+HBase Shell:-HBase contains shell through which user can communicate with HBase.HBase uses the Hadoop file system to store its data.it will have a Master server and region servers.The data storage will be in the form of regions(tables).
+these regions will be split up and stored in region servers.
+
+The Master server manages these region servers and all these tasks take place on HDFS.
+
+General command:-
+
+status - Provides the status of HBase, for example, the number of servers.
+
+version - Provides the version of HBase being used.
+
+table_help - Provides help for table-reference commands.
+
+whoami - Provides information about the user.
+
+Data Definition Language:-
+These command that should use to operate on the tables in HBase.
+
+1.)Create:-Create a table
+2.)list:-Lists all the tables in Hbase
+3.)disable:-to  disable a table.
+4.)Is_enable:-to check whther table is enable
+5.)is_disable-to check whether table is disable
+6.)enable:-to enable the table
+7.)describe:-to describe the table
+8.)alter:-alter a table
+9.)exists:-verify whether table exists or not.
+10.)drop:-drop a table from Hbase.
+11.)Drop_all:-drops the tables matching the 'regex' given in the command
+
+org.apache.hadoop.hbase.client package, HBaseAdmin and HTableDescriptor are the two important classes in this package that provide DDL functionalities.
+
+
+Data Manipulation Language
+put - Puts a cell value at a specified column in a specified row in a particular table.
+
+get - Fetches the contents of row or a cell.
+
+delete - Deletes a cell value in a table.
+
+deleteall - Deletes all the cells in a given row.
+
+scan - Scans and returns the table data.
+
+count - Counts and returns the number of rows in a table.
+
+truncate - Disables, drops, and recreates a specified table.
+
+Java client API - Prior to all the above commands, Java provides a client API to achieve DML functionalities, CRUD (Create Retrieve Update Delete) operations and more through programming, under org.apache.hadoop.hbase.client package. HTable Put and Get are the important classes in this package.
+
+
+putty
+
+log4j
+maven
+junit
+
+
+roshni team or 
+srinivas team
+chiran(authentication).
+
+
+
+
