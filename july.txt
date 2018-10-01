@@ -1,0 +1,42 @@
+Bug 30250 - Solr Sync KT
+I got a KT from Shelendar k.
+I got the things and ready to take the requirement in comming future.
+As per my understanding i am exlaining about Solr Sync below
+SolrSyncUtilities  is desktop Application is used to retrieve the data from archival storage (saved location)  and sync  the data to solr Database and mysql database.							
+Data contains the demography details and picture details.   Where demography details will be synced to solr database and picture will be saved to Mysql database.
+To perform this operation ,This application has to take some reference like UID , EID or refId.
+Where UID is numeric number of length 12 and EID is type of numeric with 28 digits and refId is type of alphanumeric  with length 50.
+This application rarely used when we found that picture and demography data are deleted from Mysql database and Solr database  respectively.In this case we use this application to sync data from archival .
+It will sync the data to solr and  MYsql for particular EID or UID for specific transaction id.
+
+Knowledge transfer done ,Code setup & code analysis done
+
+Bug 30251 - CSAPI/SSAPI/ASAPI KT
+I got a KT from Shelendar k.
+I got the things and ready to take the requirement in comming future.
+As per my understanding i am exlaining about Solr Sync below
+CSAPI(Common Search API) is rest web service application. It get the xml request, process the request and give the xml response.
+Common search api will lookup residents demographic and photo information based on  EID/UID/REFID/ENO.
+Request xml should have appID,txnID,userID,version,lk,ts,scope,filter and idType.
+appID can be DEFAULT,FI,EAADHAAR,EKYC,PORTAL,DSDV,SSUP,MDD,DDCV1,ADMNPRTL
+txnID will be set by a calling client to identify a transaction.
+For CSAPI userID will  be system and version(ver) will be v2.5
+lk is Optional attribute. This will be used for future use to control api usage by calling client application.
+ts(Timestamp)set by the calling client
+Scope can be "full" or "UIDLimited" or "INPROCESS"
+filter can be "DEMOGRAPHICS_PHOTO" or "DEMOGRAPHICS"
+idType can be EID/UID/REFID/ENO.
+id parameter field to specify id(eid,uid,eno,refid)
+Response will contain appID,txnID,result,respCode,ts,err and record.Record object will contain all demographic and photo information.
+
+Knowledge transfer done ,Code setup & code analysis done
+
+Bug 30215 - BATCH KT 
+Got a kt from Shelendra and anurag and ready to get the requirement in future.
+Knowledge transfer done ,Code setup & code analysis done
+
+
+Bug 30149 - FindAadhaar KT
+
+Got a Kt from Manasa and Shelendar and i am working on some bugs currently.
+Knowledge transfer done ,Code setup & code analysis done

@@ -1,0 +1,24 @@
+https://www.youtube.com/watch?v=hAcysIjzxKM
+
+Text file to access.
+
+access to mysql
+
+https://www.youtube.com/watch?v=4u6ObJ8y6Vw
+
+https://dev.mysql.com/doc/workbench/en/wb-migration-database-access.html
+
+https://www.mysql.com/why-mysql/white-papers/a-guide-for-migrating-from-microsoft-access-to-mysql/
+
+https://www.youtube.com/watch?v=rTqf8X3oLP4
+
+from *.jar file to exe
+
+https://stackoverflow.com/questions/147181/how-can-i-convert-my-java-program-to-an-exe-file
+
+https://stackoverflow.com/questions/18458682/how-to-generate-executable-of-java-project-in-eclipse
+
+http://launch4j.sourceforge.net/
+
+JSmooth software already downloaded to create exe file from jar file of java application.
+

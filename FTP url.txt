@@ -1,0 +1,18 @@
+Employee id:-11012806
+Email id:-vicky.jaiswal@hcl.com
+
+ftp://10.8.15.41
+folder name :-poolfolder
+password-@1234/baba@44ever
+
+QA Database info
+
+credential
+MySQL Host Address:-10.66.204.139
+UserName:-su01
+password:-uidai123
+
+uidv2_
+uid_origine_tracker
+
+https://intranet.hclinsys.com/home/Login----intranet portal

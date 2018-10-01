@@ -1,0 +1,100 @@
+1.>Wifi is connected but access to internet
+ans:-
+
+ncpa.cpl from command prompt
+click on wifi properties
+and set the ip address
+first check the box of Obtain an ip address automatically
+
+second check box is 
+Use the following DNS server addresses
+and feed the preferred DNS server 8.8.8.8
+and in alternate DNS server 8.8.4.4
+
+ref:-
+https://youtu.be/HznL6MXcGJ8
+
+2.>To check all the user profile in laptop
+ans:-from cmd command
+net user
+
+3.)to check the details of particular user profile
+ans:-
+net user <user name>
+e.g
+net user Guest
+
+4.)to change the password of any profile as administrator
+ans:-
+net user <user name> <password>
+e.g
+net user Guest password
+
+______________________________________
+http://hackertyper.com/
+it is fake to show the user as hacker to hack the someone pertaining
+
+Here's how you can fool coworkers into believing that you have acquired some serious hacking skills. Head to hackertyper.com and hit the F11 function key on the keyboard (to put the web browser into fullscreen mode). It will open what looks like a terminal window — proceed to mash the keyboard furiously — it all looks like code.
+
+Three taps on the Caps Lock button will throw up a large 'Access Denied' message, three taps on the Alt key will show an 'Access Granted' message and the Esc key will clear all messages.
+
+_________________________________
+thetypingcat.com
+to check the typing speed online
+
+___________________________________________
+10minutemail.com
+
+its temporary mail valid for 10 mintes. if we dont want tell mail id to someone in this case we can use temporary mail to send and receive the mail
+
+____________________________________________
+Giphy.com
+to share the images
+
+__________________________
+https://www.chirbit.com/
+to share online voice recording
+
+____________________________________
+map.norse-corp.com
+to know the hacking activities going on over the world.
+to get live attack
+
+___________________________________________________________
+internet of things
+
+Internet setup by three company
+tier 1--who setup the optical wire
+
+tire 2
+who get the connection and setup from tier 1
+
+tier 3 
+who giving the net connection to all users through all other mode like sim ,braodband
+
+
+to check the wire spread over the world
+https://www.submarinecablemap.com/
+
+nixi(National Internet Exchange of India) is collection of group of isp,operator and all WHICH HAVE NOC(NETWORK OPERATION CENTER) LOCATION FACILITIES
+
+
+NOC:-
+The NOC may reside either within a company's campus or at an external location. Smaller businesses and organizations often have an internal NOC, in which local technicians administer and monitor the servers.
+
+will show the trafic of internet
+
+to check/trace the trafic of website through command prompt
+
+cmd-->tracert google.com 
+and us the iplocation.net website to check the route and trafiic usd by google.com by copy and paste the ip address from command prompt
+
+
+IANA(INTERNET ASSIGNED NUMBER AUTHORITY)
+IP ADDRESS Space is managed globally by IANA.
+
+___________________________________
+ODC(OFFSHORE DEDICATED CENTER)
+
+
+

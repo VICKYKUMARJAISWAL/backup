@@ -1,0 +1,212 @@
+1.)Why We need Drools rule based engine?
+ans-We use Drools rule where any language is not enough to develop complex business rule.In this case we use Drools business rule engine to develop complex business rule.It is also use for seprate the Business logic to application layer.
+
+2.What is Rule Engine?
+ans-It is place where we are evaluating our business rule.
+This engine is already having some predefine rule or knowledge and based on that it draws some conclusion.
+Rule Engine is pluggable piece of software component that seprate the business rule from application code.
+
+Rule:--
+
+Rule
+	when
+		<Condition>
+	then
+		<take action>
+end
+
+
+This rule is written in .drl file(Domain rule language).
+
+for real time example of Miscrosoft outlook where we are imposing the Rule.
+like 
+
+Rule 1(Vicky)
+	
+	when
+		is mail coming from vicky
+	then 
+		move it to junk folder
+
+end
+
+
+3.)what is Drools?
+ans-Drools is Business Logic integration integration platform(BLIP) written in java by extending and implementing Rete pattern-matching algorithm.
+It is open source project but there is community and enterprised version of this project is available.
+Drools helps to segregating the Business rule from application layer.This rule is written in .drl file(Domain rule langauge).
+
+Rule or Logic ,in our case is piece of knowledge an expressed as given below.
+
+Rule
+	when	
+	<Condition>
+	then
+	<take action>
+end
+
+Drools is divided into two parts.
+
+Authoring:-Authoring alsways involve to creation of Rule file (.drl) which contents the syntax for the rule .This syntax can be parse by the parser and will generate appropriate structure for the Rule.
+
+Runtime:-Creation of working memory and Handling activation which means that loading the rule in engine and how to execute it will be taken care by the Runtime.
+
+4.)Problem with the Traditional Appraoch.
+ans-Drools is extensively used in BFSI(Business Financial services and insurance).The primary reason is keep changing the requirement and adding new rule make the BFSI field volatile in nature.
+
+5.)Advantages of Drools.
+ans-
+Easier to understand
+Rules are easier to understand for a business analyst or a new developer than a program written in Java or other imperative-style language.
+
+Flexibility:
+It deals better with changes to the requirements or changes to the data model. Changing or rewriting an application is never an easy task. However, thanks to the formalism that rules bring, it is much easier to change rules than to change a Java program.
+
+Reasonable performance
+Thanks to the Rete algorithm that is behind Drools; in theory, the performance of the system doesn't depend on the number of rules. With every release of Drools, the performance of the engine is getting better by adding various optimizations such as Rete node sharing, node indexing, parallel execution, and so on. All this benefits new as well as old rules.
+
+Reusability:
+The rules are kept in one place (separation of business logic from the rest of the system), which means easier reusability. For example, imagine you've written some validation rules for your application and later on there is a need to do some batch imports of data, so you could simply reuse the validation rules in your batch import application.
+
+
+
+Redeploying
+It is possible to change/redeploy rules and processes without even stopping the whole application.
+
+6.)When not to use a Rule Engine?
+
+Ans-here are a lot of advantages of Rule Engine but that doesn't mean it can be a solution to all the application. It's not a Panacea for business layer so should be used wisely.
+
+Below are the points to ponder:
+If your project is one short effort and never be use again or maintained over time.
+
+if rule contain one rule only but we should think again because every system grows in complexity overtime.
+
+Whereas if you are about to use a Trading Application where you have new regulators on boarded every 3 months and new laws/rules regulating your application and daily new rules being told to implement and where changes are very frequent, its advisable to use Drools.
+
+
+7.)Different Terms used in Drools
+
+a.)Rules 
+b.)Facts 
+c.)Session 
+d.)KnowledgeBase 
+e.)Agenda 
+f.)Activations 
+
+
+
+Rules :
+Rules are the heart of the Rule Engine. In rules you specify the condition and then the execution part of the condition. Below is the syntax of the rule in drools:
+	rule:"My First Rule"
+		when
+		#condition
+		then
+		#action
+	end
+
+
+Facts :
+The objects on which the rules are fired are known as Facts. It can be a simple Java POJO or a complex object. Java object is synonyms to facts in Drools
+
+Session :
+KnowledgeSession is core compenent in drools where rule will be fired.KnowledgeSession hold the rule and other resources.
+KnowledgeSession will be created through KnowledgeBase.
+To Trigger the rule ,fact will be inserted into session and if condition will be matched then particular rule will be fired.
+
+	#Session is two type
+	1.Stateless KnowledgeSession:-
+		 A Stateless knowledge session won't track the changes in the facts while the rules are being fired. In simple words once we have inserted all the facts in the session and triggered all the rules then the rules cannot be fired on the updated facts. To draw a parallel, it would be similar like a web application where we are not tracking the session.
+	
+	2.Statefull KnowledgeSession:-
+	 In a Stateful knowledge session, once all the facts are inserted and rules are triggered and one rule is updating the fact and post the updation of fact another rule can also trigger as the fact is still in the session. Its similar where in a web application until the session is active all the items you add to the cart are visible.
+
+KnowledgeBase : 
+This is an interface that manages a collection of rules, processes, and internal types. In Drools these are commonly referred to as knowledge definitions or knowledge.
+
+Agenda :
+It's a logical concept. The agenda is the logical place where rules are waiting to be fired
+
+Activations :
+The then part of the rule. Activations are placed in the agenda where the appropriate rule is fired.
+
+
+8.)Rule writing or Syntax basics
+______________________________
+If you see the default rule which is written in the FirstDroolsProgram project(Sample.drl), there are a lot of keywords used. Let us explain them one by one now :
+
+
+1. Package : Every Rule starts with a package name. The package acts as a namespace for Rules. Package name has to be defined while creating the Rule resource. Rule names within a package must be unique. Packages in Rules are similar to packages in Java. When you create a new Rule by New -> Rule Resource -> then in the below window you need to mention the Rule name as well as package name.
+
+
+2. Import statement : Import statements are also similar to Java. All the FACTS classes and any helper classes needs to be imported for the rules to work on. For ex/- com.sample.DroolsTest.Message; in the above example.
+
+3. Rule Definition : The Rule definition consists of some drools specific keywords. Post you have added the plugins you can see the drools specific keywords in red color. In the above example, rule-when-then-end are the different keywords.
+rule keyword must be followed by a logical rule name.
+when keyword must be followed by some condition.
+then keyword must have the consequence part if the when condition is met.
+There are lot of other keywords which will be covered in further sections. 
+4. Global variables : With global you define global variables. They are used to make application objects available to the rules. Typically, they are used to provide data or services that the rules use, especially application services used in rule consequences, and to return data from the rules, like logs or values added in rule consequences, or for the rules to interact with the application.
+
+9.)Rule Syntax
+The Drools Rule Resource(DRL) has a different syntax and covering the syntax in the below section :
+Conditions in Rules :
+A rule can contain many conditions/patterns:
+* Student(id == 001)
+* Employee(name == "Vivek")
+The above conditions checks if Student id is 1 and the Employee name is Vivek.
+
+Variable in Rules :
+A variable name in Drools starts with a $ dollar symbol.
+$student : Student()
+$student is the variable for Student() class.
+This is similar to Student student = new Student() in java. Drools can work with all the native Java types and even Enum.
+
+Comments in Rules:
+In Drools 5.x, # or // can be used as a single line comments
+For Multi Line comments:
+/* 
+	Another line 
+*/
+
+Functions in Rules:
+Functions are a convenience feature. They can be used in conditions and consequences. If there is any modification to be done in the then part of the rule, a normal static java helper function can be called.
+function double calculateAreaofSquare(double value) 
+{ 
+    return value * value; 
+}
+
+Dialect:
+Dialect specifies the syntax used in any code expression that is in a condition or a consequence. The default value is Java. Drools currently supports one more dialect called mvel.
+The default dialect can be specified at the package level as follows:
+package org.mycompany.somePackage
+dialect "mvel"
+
+MVEL Dialect:
+mvel is an expression language for Java-based applications. mvel supports field and method/getter access. It is based on Java syntax.
+
+The no-loop attribute
+This attribute informs the rule engine that a rule should be activated only once per matched facts. If there is a generic condition in the rule, then this attribute should be used to avoid the infinite loop scenario.
+
+Salience:
+Salience is a very important feature of Rule Syntax.
+It is used by the conflict resolution strategy to decide which rule to fire first.If there are two rules and both have the conditions are met, then salience is used to determine the order of rule firing. It has one attribute, which takes any expression that returns a number of type int (positive as well as negative numbers are valid). The higher the value, the more likely a rule will be picked up by the conflict resolution strategy to fire.
+salience ($account.balance * 5)
+salience 100
+The default salience value is 0. We should keep this in mind when assigning salience values to some rules only. There are a lot of other features/parameters in the Rule Syntax but we have covered the important ones.
+
+10.) Rule Consequence Keywords
+Rule Consequence Keywords means the keywords which are used in the "then" part of the rule.
+1. Modify: The attributes of the fact can be modified in the then part of the Rule.
+2. Insert: Based on some condition if true, one can insert a new fact into the current session of the Rule Engine.
+3. Retract: If a particular condition is true in a Rule and you don't want to act anything else on that fact, you can retract the particular fact from the Rule Engine.
+Note : It is considered very bad practise to have conditional logic(if statements) within rule consequence. Most of time, a new rule should be created.
+
+____________________________________________________________________________
+References:-
+https://www.studytonight.com/drools/add-drools-plugin.php
+http://www.drools.org/
+https://www.slf4j.org/download.html
+
+
+ 

@@ -1,0 +1,30 @@
+01 sep 2017
+set up csapi application.
+
+04 sep 2017
+at UIDAI,configuration of LAN, static id address mapped with mac address
+
+05 sep 2017
+Ad account creation,Laptop user profile creation 
+
+06 sep 2017
+setting the configuration for Maven,java for new userprofile ,resolving the problem of csapi application configuration.
+
+07 sep 2017
+code analysis for CSAPI api
+
+08 sep 2017
+code work through for AsAPi
+
+11 sep 2017
+code work through for SSAPI
+
+12 sep 2017
+
+13 sep 2017
+
+14 sep 2017
+
+15 sep 2017
+
+18 sep 2017

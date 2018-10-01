@@ -1,0 +1,5 @@
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+Maven build Life cycle
+
+http://www.avajava.com/tutorials/lessons/how-do-i-use-the-maven-clean-phase.html?page=2
