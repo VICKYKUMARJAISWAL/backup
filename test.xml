@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stores>
+  <Store name="abc">
+    <Branch name ="Branch1">
+      <Products>
+        <Product>
+          <name>CD</name>
+          <Price>12</Price>
+          <Inventory>200</Inventory>
+        </Product>
+      <Product>
+          <name>Music System</name>
+          <Price>345</Price>
+          <Inventory>10</Inventory>
+        </Product>
+       <Product>
+          <name>Cell Phone</name>
+          <Price>145</Price>
+          <Inventory>35</Inventory>
+        </Product>
+      </Products>
+    </Branch>    
+<Branch name ="Branch2">
+      <Products>
+        <Product>
+          <name>Battery</name>
+          <Price>24</Price>
+          <Inventory>45</Inventory>
+        </Product>
+      <Product>
+          <name>Music System</name>
+          <Price>345</Price>
+          <Inventory>17</Inventory>
+        </Product>
+       <Product>
+          <name>Cell Phone</name>
+          <Price>145</Price>
+          <Inventory>43</Inventory>
+        </Product>
+      </Products>
+    </Branch>  
+  </Store>  
+ <Store name="Xyz">
+    <Branch name ="Main">
+      <Products>
+        <Product>
+          <name>CD</name>
+          <Price>12</Price>
+          <Inventory>300</Inventory>
+        </Product>
+      <Product>
+          <name>Music System</name>
+          <Price>345</Price>
+          <Inventory>45</Inventory>
+        </Product>
+       <Product>
+          <name>Cell Phone</name>
+          <Price>145</Price>
+          <Inventory>123</Inventory>
+        </Product>
+      </Products>
+    </Branch>    
+<Branch name ="city">
+      <Products>
+        <Product>
+          <name>CD</name>
+          <Price>12</Price>
+          <Inventory>17</Inventory>
+        </Product>
+       <Product>
+          <name>Cell Phone</name>
+          <Price>145</Price>
+          <Inventory>57</Inventory>
+        </Product>
+      </Products>
+    </Branch>  
+  </Store>
+</Stores>
